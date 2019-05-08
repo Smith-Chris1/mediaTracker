@@ -1,0 +1,60 @@
+
+html, body{
+  height: 100vh;
+}
+
+.card-body
+{
+    max-height: 65vh;
+}
+
+ body {
+    /* padding-top: 54px; */
+    margin-bottom: -60px;
+    /* overflow: hidden; */
+    
+  }
+  .container {
+    max-width: 90%;
+    min-height: 80%;
+    /* overflow: hidden; */
+  }
+ 
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+  }
+  
+  .modal-lg {
+    max-width: 80%;
+}
+
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+.card-body .row:nth-child(even){
+  background-color: #f9f9f9;
+}
+.card-body .row:nth-child(odd){
+  background-color: #ededed;;
+}
+
+.modal-dialog .fa-pencil-alt {
+  color:red;
+}
+.modal-dialog .fa-check {
+  color:green;
+}
+
+/* #mainList {
+  max-height: 90%;
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
+} */

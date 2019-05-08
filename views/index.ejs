@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <% include partials/nav %>
+    </nav>
+    <div class="container-fluid content-row">
+        <div id="addScriptDiv" class="modal" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Script Writer</h5>
+                        <button type="button" onclick="closeModal('addScriptDiv')" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group-append">
+                            <input id="addScript" type="text" class="form-control editField" value="" readonly>
+                            <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                <i class="fas fa-check d-none"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="saveChanges('addScriptDiv')" class="btn btn-primary">Save changes</button>
+                        <button type="button" onclick="closeModal('addScriptDiv')" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addVOtalentDiv" class="modal" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Voice Over Artist</h5>
+                        <button type="button" onclick="closeModal('addVOtalentDiv')" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group-append">
+                            <input id="addVOtalent" type="text" class="form-control editField" value=""
+                                readonly>
+                            <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                <i class="fas fa-check d-none"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="saveChanges('addVOtalentDiv')" class="btn btn-primary">Save changes</button>
+                        <button type="button" onclick="closeModal('addVOtalentDiv')" class="btn btn-secondary"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addResearchDiv" class="modal" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Research</h5>
+                        <button type="button" onclick="closeModal('addResearchDiv')" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group-append">
+                            <input id="addResearch" type="text" class="form-control editField" value=""
+                                readonly>
+                            <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                <i class="fas fa-check d-none"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="saveChanges('addResearchDiv')" class="btn btn-primary">Save changes</button>
+                        <button type="button" onclick="closeModal('addResearchDiv')" class="btn btn-secondary"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addEditDiv" class="modal" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Editor</h5>
+                        <button type="button" onclick="closeModal('addEditDiv')" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group-append">
+                            <input id="addEdit" type="text" class="form-control editField" value="" readonly>
+                            <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                <i class="fas fa-check d-none"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="saveChanges('addEditDiv')" class="btn btn-primary">Save changes</button>
+                        <button type="button" onclick="closeModal('addEditDiv')" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addMasterDiv" class="modal" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Master</h5>
+                        <button type="button" onclick="closeModal('addMasterDiv')" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group-append">
+                            <input id="addMaster" type="text" class="form-control editField" value="" readonly>
+                            <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                <i class="fas fa-check d-none"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="saveChanges('addMasterDiv')" class="btn btn-primary">Save changes</button>
+                        <button type="button" onclick="closeModal('addMasterDiv')" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addCaptionDiv" class="modal" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Caption</h5>
+                        <button type="button" onclick="closeModal('addCaptionDiv')" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group-append">
+                            <input id="addCaption" type="text" class="form-control editField" value="" readonly>
+                            <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                <i class="fas fa-check d-none"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="saveChanges('addCaptionDiv')" class="btn btn-primary">Save changes</button>
+                        <button type="button" onclick="closeModal('addCaptionDiv')" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="podInfo" class="modal" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="col p-0">
+                            <label for="name">Title</label>
+                            <div class="input-group-append">
+                                <input id="podTitle" type="text" class="form-control editField" value="FullName"
+                                    readonly>
+                                <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                    <i class="fas fa-check d-none"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="closeModal('podInfo')" type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="podForm" class="modal-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="name">Category</label>
+                                                <div class="input-group-append">
+                                                    <input id="category" type="text" class="form-control editField"
+                                                        value="Category" readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <label for="name">Grade</label>
+                                                <div class="input-group-append">
+                                                    <input id="grade" type="text" class="form-control editField" value="Grade"
+                                                        readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <label for="name">State</label>
+                                                <div class="input-group-append">
+                                                    <input id="state" type="text" class="form-control editField" value="State"
+                                                        readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <label for="name">Week</label>
+                                                <div class="input-group-append">
+                                                    <input id="week" type="text" class="form-control editField" value="Week"
+                                                        readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <label for="name">Article</label>
+                                                <div class="input-group-append">
+                                                    <input id="article" type="text" class="form-control editField"
+                                                        value="Article" readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pt-3">
+                                            <div class="col">
+                                                <label for="name">Full Name</label>
+                                                <div class="input-group-append">
+                                                    <input id="fullName" type="text" class="form-control editField"
+                                                        value="FullName" readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col">
+                                                    <label for="name">Captions</label>
+                                                    <div class="input-group-append">
+                                                        <input id="captions" type="text" class="form-control editField"
+                                                            value="" readonly><br>
+                                                        <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                            <i class="fas fa-check d-none"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                        </div>
+                                        <!-- </div> -->
+                                        <div class="row pt-3">
+                                            <div class="col mr-5">
+                                                <label for="name">Writer</label>
+                                                <div class="input-group-append">
+                                                    <input id="script" type="text" class="form-control editField" value="Script Writer"
+                                                        readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mr-5">
+                                                <label for="name">VO Artist</label>
+                                                <div class="input-group-append">
+                                                    <input id="vo" type="text" class="form-control editField" value="VO"
+                                                        readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col mr-5">
+                                                <label for="name">Researcher</label>
+                                                <div class="input-group-append">
+                                                    <input id="researcher" type=" text" class="form-control editField"
+                                                        value="Researcher" readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mr-5">
+                                                <label for="name">Editor</label>
+                                                <div class="input-group-append">
+                                                    <input id="editor" type="text" class="form-control editField" value="Editor"
+                                                        readonly>
+                                                    <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                        <i class="fas fa-check d-none"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-3">
+                                        <div class="col mr-5">
+                                            <label for="name">Video</label>
+                                            <div class="input-group-append">
+                                                <input id="deliverable" type="text" class="form-control editField"
+                                                    value="Deliverable" readonly><br>
+                                                <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                    <i class="fas fa-check d-none"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col mr-5">
+                                            <label for="name">Caption</label>
+                                            <div class="input-group-append">
+                                                <input id="caption" type="text" class="form-control editField" value=""
+                                                    readonly><br>
+                                                <div class="input-group-text"> <i class="fas fa-pencil-alt d-none"></i>
+                                                    <i class="fas fa-check d-none"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col my-auto">
+                            <video id="videoFrame" controls class="embed-responsive embed-responsive-16by9"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+                    <button onclick="closeModal('podInfo')" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center py-2">
+        <div class="col">
+            <span id='displayedCount' class='float-left font-weight-bold my-auto mx-auto text-center'></span>
+        </div>
+        <div class="col">
+            <div class="form-group float-right my-auto mx-auto pl-1">
+                <!-- <label for="exampleSelect1">Display per page</label> -->
+                <select class="form-control" id="exampleSelect1">
+                    <option>100</option>
+                    <option>200</option>
+                    <option>300</option>
+                    <option>400</option>
+                    <option>500</option>
+                </select>
+            </div>
+            <ul class="float-right pagination pagination-sm my-auto mx-auto text-center">
+                <li class="page-item">
+                    <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <%if (pages > 5) {%>
+                <%for (var i = 1; i <= 5; i++){%>
+                <%if (i < 5) {%>
+                <li class="page-item">
+                    <a class="page-link" href="/?page=<%=i%>">
+                        <%=i%></a>
+                </li>
+                <%}}%>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">...</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="<%=pages%>>">
+                        <%=pages%></a>
+                </li>
+                <%} else { %>
+                <%for (var i = 1; i <= pages; i++){%>
+                <li class="page-item">
+                    <a class="page-link" href="/?page=<%=i%>">
+                        <%=i%></a>
+                </li>
+                <%}}%>
+                <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" id="mainList">
+        <div class="col">
+            <div class="bd-example">
+                <div class="card">
+                    <div class="card-header ">
+                        <div class="row text-center">
+                            <div class="col-sm font-weight-bold">Name</div>
+                            <div class="col-sm font-weight-bold">Script</div>
+                            <div class="col-sm font-weight-bold">VO</div>
+                            <div class="col-sm font-weight-bold">Research</div>
+                            <div class="col-sm font-weight-bold">Editor</div>
+                            <div class="col-sm font-weight-bold">Master</div>
+                            <div class="col-sm font-weight-bold">Captions</div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="overflow: auto">
+                        <%for (var result = 0; result < 100; result++){%>
+                        <div id="<%=pods[result].pod_id%>" class="row border" order="<%=pods[result].pod_name%>">
+                            <div class="col-sm text-center my-auto" style="text-overflow: ellipsis; overflow: hidden; ">
+                                <button class="btn btn-link font-weight-bold" onclick="openModal('<%=pods[result].pod_id%>')">
+                                    <%=pods[result].pod_name%> </button>
+                            </div>
+                            <% if (pods[result].writer == null && pods[result].writer == "") { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addScriptDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].writer%>'>
+                                    <i class="fas fa-times"></i> Missing </button></div>
+                            <% } else { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addScriptDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].writer%>'>
+                                    <i class="fas fa-check"></i> Complete
+                                </button></div>
+                            <% } %>
+
+                            <% if ((pods[result].voTalent == null || pods[result].voTalent == "")) { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addVOtalentDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].voTalent%>'>
+                                    <i class="fas fa-times"></i> Missing </button></div>
+                            <% } else { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addVOtalentDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].voTalent%>'>
+                                    <i class="fas fa-check"></i> Complete</button></div>
+                            <% } %>
+
+                            <% if ((pods[result].researcher == null || pods[result].researcher == "")) { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addResearchDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].researcher%>'>
+                                    <i class="fas fa-times"></i> Missing </button></div>
+                            <% } else { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addResearchDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].researcher%>'>
+                                    <i class="fas fa-check"></i> Complete
+                                </button></div>
+                            <% } %>
+
+                            <% if ((pods[result].editor == null || pods[result].editor == "")) { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addEditDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].editor%>'>
+                                    <i class="fas fa-times"></i> Missing </button></div>
+                            <% } else { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addEditDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].editor%>'>
+                                    <i class="fas fa-check"></i> Complete
+                                </button></div>
+                            <% } %>
+
+                            <% if ((pods[result].master == null || pods[result].master == "")) { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addMasterDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].master%>'>
+                                    <i class="fas fa-times"></i> Missing </button></div>
+                            <% } else { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addMasterDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].master%>'>
+                                    <i class="fas fa-check"></i> Complete
+                                </button></div>
+                            <% } %>
+
+                            <% if ((pods[result].caption_status == null || pods[result].caption_status == "")) { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addCaptionDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title='<%=pods[result].caption_status%>'>
+                                    <i class="fas fa-times"></i> Missing </button></div>
+                            <% } else { %>
+                            <div class="col-sm text-center my-auto"><button onclick="addCaptionDiv('<%=pods[result].pod_id%>')"
+                                    class="btn btn-success btn-sm" class="btn btn-success btn-sm" data-toggle="tooltip"
+                                    data-placement="left" title='<%=pods[result].caption_status%>'>
+                                    <i class="fas fa-check"></i> Complete
+                                </button></div>
+                            <% } %>
+
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <% include partials/footer %>
+    </footer>
+</body>
+<script>
+    var podList = <%-JSON.stringify(pods)%>
+
+    document.getElementById("displayedCount").innerHTML = "Displaying Records: " + podList.length + " of " +
+        podList.length
+
+    $(document).ready(function () {
+        $('.modal-content .fa-check').toggleClass('d-none');
+        $('i').click(function () {
+            if ($(this).parents().siblings('input').is('[readonly]')) {
+                $(this).parents().siblings('input').prop('readonly', false); //turns the readonly off
+                $(this).toggleClass('d-none'); //d-none one glyphicon
+                $(this).siblings('.fa-pencil-alt').toggleClass('d-none');
+            } else {
+                $(this).toggleClass('d-none'); //d-none one glyphicon
+                $(this).siblings('.fa-check').toggleClass('d-none');
+                $(this).parents().siblings('input').prop('readonly', true); //turns the readonly off
+            }
+        });
+    });
+
+    function addVOtalentDiv(id) {
+        addVOtalentDiv = document.getElementById('addVOtalentDiv')
+        addVOtalentValue = document.getElementById('addVOtalent')
+        if (podList[id - 1].voTalent != null || podList[id - 1].voTalent != undefined) {
+            addVOtalentValue.value = podList[id - 1].voTalent
+        }
+        addVOtalentDiv.style.display = "block"
+    }
+
+    function addResearchDiv(id) {
+        addResearch = document.getElementById('addResearchDiv')
+        addResearchValue = document.getElementById('addResearch')
+        if (podList[id - 1].researcher != null || podList[id - 1].researcher != undefined) {
+            addResearchValue.value = podList[id - 1].researcher
+        }
+        addResearch.style.display = "block"
+    }
+
+    function addScriptDiv(id) {
+        podScript = document.getElementById('addScriptDiv')
+        podScriptValue = document.getElementById('addScript')
+        if (podList[id - 1].writer != null || podList[id - 1].writer != undefined) {
+            podScriptValue.value = podList[id - 1].writer
+        }
+        podScript.style.display = "block"
+    }
+
+    function addEditDiv(id) {
+        addEdit = document.getElementById('addEditDiv')
+        addEditValue = document.getElementById('addEdit')
+        if (podList[id - 1].editor != null || podList[id - 1].editor != undefined) {
+            addEditValue.value = podList[id - 1].editor
+        }
+        addEdit.style.display = "block"
+    }
+
+    function addMasterDiv(id) {
+        addMaster = document.getElementById('addMasterDiv')
+        addMasterValue = document.getElementById('addMaster')
+        if (podList[id - 1].master != null || podList[id - 1].master != undefined) {
+            addMasterValue.value = podList[id - 1].master
+        }
+        addMaster.style.display = "block"
+    }
+
+    function addCaptionDiv(id) {
+        addCaption = document.getElementById('addCaptionDiv')
+        addCaptionValue = document.getElementById('addCaption')
+        if (podList[id - 1].captions != null || podList[id].captions != undefined) {
+            addCaptionValue.value = podList[id - 1].captions
+        }
+        addCaption.style.display = "block"
+    }
+
+
+    function openModal(id) {
+        console.log(id)
+        podTitle = document.getElementById('podTitle')
+        podTitle.value = podList[id - 1].pod_name
+        category = document.getElementById("category")
+        category.value = podList[id - 1].pod_cat
+        grade = document.getElementById("grade")
+        grade.value = podList[id - 1].pod_grade
+        state = document.getElementById("state")
+        state.value = podList[id - 1].pod_state
+        week = document.getElementById("week")
+        week.value = podList[id - 1].pod_week
+        fullName = document.getElementById("fullName")
+        fullName.value = podList[id - 1].pod_fullName
+        article = document.getElementById("article")
+        article.value = podList[id - 1].pod_article
+        script = document.getElementById("script")
+        script.value = podList[id - 1].writer
+        vo = document.getElementById("vo")
+        vo.value = podList[id - 1].voTalent
+        researcher = document.getElementById("researcher")
+        researcher.value = podList[id - 1].researcher
+        editor = document.getElementById("editor")
+        editor.value = podList[id - 1].editor
+        deliverable = document.getElementById("deliverable")
+        if (videoFrame.src != null || videoFrame.src != undefined) {
+            videoFrame.setAttribute('src', "");
+            videoFrame.load()
+        }
+        if (podList[id - 1].master != null || podList[id - 1].master != undefined) {
+            videoFrame = document.getElementById('videoFrame')
+            videoFrame.setAttribute('src', podList[id - 1].master);
+            videoFrame.load()
+        }
+
+        deliverable.value = podList[id - 1].master
+        captions = document.getElementById("caption")
+        captions.value = podList[id - 1].caption_status
+        podInfo = document.getElementById('podInfo')
+        podTitle = document.getElementById('podTitle')
+        podInfo.style.display = "block"
+        podTitle.innerHTML = podList[id - 1].pod_name
+
+    }
+
+    function closeModal(modal) {
+        document.getElementById(modal).style.display = "none"
+    }
+
+    function close_all() {
+        for (i = 0; i < podList.length; i++) {
+            document.getElementById(podList[i].pod_id).classList.add('d-none')
+        }
+    }
+
+    function show_all() {
+        for (i = 0; i < podList.length; i++) {
+            document.getElementById(podList[i].pod_id).classList.remove('d-none')
+        }
+    }
+
+    function find_my_div() {
+        close_all();
+        displayingCount = 0
+        var str_needle = edit_search.value;
+        str_needle = str_needle.toUpperCase();
+        var searchStrings = str_needle.split(/\W/);
+
+        for (var i = 0, len = searchStrings.length; i < len; i++) {
+            var currentSearch = searchStrings[i].toUpperCase();
+            if (currentSearch !== "") {
+                for (var j = 0; j < podList.length; j++) {
+                    if (podList[j].pod_name.toUpperCase().indexOf(currentSearch) !== -1) {
+                        document.getElementById(podList[j].pod_id).classList.remove('d-none')
+                        displayingCount++
+                    }
+                }
+                document.getElementById("displayedCount").innerHTML = "Displaying Records: " +
+                    displayingCount + " of " + podList.length
+            } else {
+                show_all();
+                document.getElementById("displayedCount").innerHTML = "Displaying Records: " + podList.length +
+                    " of " + podList.length
+            }
+        }
+    }
+</script>
+
+</html>
